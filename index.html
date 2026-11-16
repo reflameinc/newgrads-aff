@@ -684,10 +684,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="form">
       <div class="form-hd"><small>＼ 60分・オンライン・費用はかかりません ／</small><b class="sd"><span class="ph">模擬面接・</span><span class="ph">面接対策のご予約</span></b><b class="sb"><span class="ph">志望動機・</span><span class="ph">面接対策のご予約</span></b><small>入力のあと、空いている日程を選べます</small></div>
       <div class="form-bd">
-        <div id="reflame-booking"></div>
+        <!-- id は reflame-booking-widget にする（reflame-booking にすると、GTMの「予約枠の表示」検知タグ（/lp/newgrads/ 配下で #reflame-booking を探す）が
+             このアフィのページでも動き、Meta広告の最適化イベント booking_slots_view にアフィの訪問が混ざる） -->
+        <div id="reflame-booking-widget"></div>
         <noscript><p class="embed-fallback"><a href="https://designer.my.site.com/scheduling?slug=mk-reflame-aff">こちらから予約できます</a></p></noscript>
         <p class="embed-fallback" id="embed-fallback" hidden>予約欄を読み込めませんでした。お手数ですが、ページを再読み込みしてください。</p>
-        <script src="https://designer.my.site.com/schedulingvforcesite/services/apexrest/booking/v1/embed.js" data-slug="mk-reflame-aff" data-target="#reflame-booking"></script>
+        <script src="https://designer.my.site.com/schedulingvforcesite/services/apexrest/booking/v1/embed.js" data-slug="mk-reflame-aff" data-target="#reflame-booking-widget"></script>
         <!-- 予約フォームの色を、このLPに合わせて上書き（水色・珊瑚色） -->
         <script>
         (function () {
@@ -741,7 +743,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           })();
           // 予約欄が出ない画面（確認用など）では、空欄の代わりに説明を出す
           function check() {
-            var h = document.querySelector('#reflame-booking');
+            var h = document.querySelector('#reflame-booking-widget');
             var broken = h && h.shadowRoot && /表示できません/.test(h.shadowRoot.textContent || '');
             if (h && ((!h.shadowRoot && !h.children.length) || broken)) document.getElementById('embed-fallback').hidden = false;
           }
