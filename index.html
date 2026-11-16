@@ -101,6 +101,14 @@ p+p{margin-top:1em}
 .fv h1 .m1{white-space:nowrap;font-size:clamp(19px,6.3vw,36px)}
 html.v-sb .fv-person{height:calc(100% - 10px);right:4%}
 .fv h1 .b{color:var(--blue2);background:linear-gradient(transparent 70%,#ffe27a 70%);padding:0 2px}
+/* 面接診断の版の最初の画面（2026-11-16 鈴村さんの参考画像に合わせて直した）:
+   札は大きく白地に青の太枠／「同じところ」は青い四角に白い文字／見出しは人物に少しかかってよいので幅を広げる */
+.chip.sd{background:#fff;border-width:2px;font-size:17px;padding:4px 16px;line-height:1.5}
+.fv h1.sd{margin:14px 0 12px;line-height:1.28}
+.fv h1.sd .s{font-size:19px}
+.fv h1.sd .m{font-size:clamp(26px,8.2vw,52px);white-space:nowrap}
+.fv h1.sd .b{display:inline-block;color:#fff;background:var(--blue2);padding:0 .18em;margin:0 .12em;line-height:1.25;text-shadow:none}
+@media (max-width:859px){html:not(.v-sb) .fv-copy{width:78%}}
 .fv-person{position:absolute;z-index:1;right:-2%;bottom:0;height:calc(100% - 14px);max-height:calc(48vw * 1.68);width:auto;max-width:none}
 /* 月桂冠の実績（支援実績・満足度）：細い枝で囲み、上に王冠、数字は明朝体。小さい文字は月桂冠バッジの例外（14px未満可） */
 .fv-proof{display:grid;grid-template-columns:repeat(3,max-content);gap:0 2px;margin-top:8px}
@@ -427,9 +435,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="fv" style="padding:0">
   <div class="fv-in">
     <div class="fv-copy">
-      <span class="chip sd">面接が苦手な28卒へ</span>
+      <span class="chip sd">就活無双したい28卒へ</span>
       <span class="chip chip-2 sb">「なぜうちに？」に答えづらい28卒へ</span>
-      <h1 class="sd"><span class="s">落ちた理由が分かれば、</span><span class="m">もう<span class="b">同じ所</span>で</span><span class="m">つまずかない。</span></h1>
+      <h1 class="sd"><span class="s">落ちた理由が分かれば、</span><span class="m m-sd">もう<span class="b">同じところ</span>で</span><span class="m">つまずかない。</span></h1>
       <h1 class="sb"><span class="s">志望動機は、</span><span class="m m1">もう<span class="b">作らなくていい</span></span></h1>
       <div class="fv-proof">
         <div class="pf"><svg class="wr" viewBox="0 0 100 94" aria-hidden="true"><use href="#wreath"/></svg><svg class="crown" viewBox="0 0 24 16" aria-hidden="true"><use href="#crown"/></svg><p><span class="k">支援実績</span><span class="v">4,200</span><span class="u">名以上</span></p></div>
